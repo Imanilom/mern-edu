@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Static files
-// app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, '/client/dist')));
 
 // API Routes
 app.use('/api/user', userRoutes);
@@ -52,9 +52,9 @@ app.use('/api/monitoring', monitoringRoutes);
 app.use('/api/financing', financingRoutes);
 
 // Catch-all to serve client app
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
