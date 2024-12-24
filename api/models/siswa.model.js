@@ -1,6 +1,6 @@
 const SiswaSchema = new mongoose.Schema({
     nama: { type: String, required: true },
-    kelas: { type: Number, required: true }, // Contoh: 1, 2, 3
+    kelas: { type: mongoose.Schema.Types.ObjectId, ref: "Kelas" }, // Relasi ke kelas
     kursusDiambil: [
       {
         kursusId: { type: mongoose.Schema.Types.ObjectId, ref: "Kursus" },
