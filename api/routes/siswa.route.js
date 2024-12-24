@@ -7,8 +7,8 @@ import {
     getSiswaById, 
     removeKursus, 
     updateProgress, 
-    updateSiswa} from '../controllers/siswa.controller';
-    
+    updateSiswa} from '../controllers/siswa.controller.js';
+
 const router = express.Router();
 
 router.post("/", addSiswa); // Tambah siswa baru

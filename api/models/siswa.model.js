@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 const SiswaSchema = new mongoose.Schema({
     nama: { type: String, required: true },
     kelas: { type: mongoose.Schema.Types.ObjectId, ref: "Kelas" }, // Relasi ke kelas

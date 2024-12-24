@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 const PengajarSchema = new mongoose.Schema({
     nama: { type: String, required: true },
     kursus: [

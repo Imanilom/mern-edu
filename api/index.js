@@ -3,16 +3,10 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
-import curriculumRoutes from './routes/curriculumRoutes.js';
-import classRoutes from './routes/classRoutes.js';
-import teacherRoutes from './routes/teacherRoutes.js';
-import scheduleRoutes from './routes/scheduleRoutes.js';
-import subjectRoutes from './routes/subjectRoutes.js';
-import taskRoutes from './routes/taskRoutes.js';
-import extracurricularRoutes from './routes/extracurricularRoutes.js';
-import supportRoutes from './routes/supportRoutes.js';
-import monitoringRoutes from './routes/monitoringRoutes.js';
-import financingRoutes from './routes/financingRoutes.js';
+import kurikulumRoutes from './routes/kurikulum.route.js';
+import kursusRoutes from './routes/kursus.route.js';
+import pengajarRoutes from './routes/pengajar.route.js';
+import siswaRoutes from './routes/siswa.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 
@@ -40,7 +34,10 @@ app.use(express.static(path.join(__dirname, '/client/dist')));
 // API Routes
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
-
+app.use('/api/kurikulum', kurikulumRoutes);
+app.use('/api/kursus', kursusRoutes);
+app.use('/api/pengajar', pengajarRoutes);
+app.use('/api/siswa', siswaRoutes);
 
 // Catch-all to serve client app
 // app.get('*', (req, res) => {
