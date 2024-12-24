@@ -40,21 +40,12 @@ app.use(express.static(path.join(__dirname, '/client/dist')));
 // API Routes
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/curriculums', curriculumRoutes);
-app.use('/api/classes', classRoutes);
-app.use('/api/teachers', teacherRoutes);
-app.use('/api/schedules', scheduleRoutes);
-app.use('/api/subjects', subjectRoutes);
-app.use('/api/task', taskRoutes);
-app.use('/api/extracurriculars', extracurricularRoutes);
-app.use('/api/supports', supportRoutes);
-app.use('/api/monitoring', monitoringRoutes);
-app.use('/api/financing', financingRoutes);
+
 
 // Catch-all to serve client app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+// });
 
 // Error handling middleware
 app.use((err, req, res, next) => {
